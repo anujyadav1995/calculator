@@ -8,5 +8,8 @@ RSpec.describe StringCalculator do
         it 'when there is a single number' do
             expect(StringCalculator.add("1")).to eq(1)
         end
+        it 'when there is a double or multiple number' do
+            expect(StringCalculator.add("1,2,3,4")).to eq(10)
+        end
     end
 end
