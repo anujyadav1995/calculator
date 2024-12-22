@@ -14,5 +14,8 @@ RSpec.describe StringCalculator do
         it 'when there is a handle new lines between numbers' do
             expect(StringCalculator.add("1\n2,3")).to eq(6)
         end
+        it 'when the input is delimiters' do
+            expect(StringCalculator.add("//;\n1;2")).to eq(6)
+        end
     end
 end
