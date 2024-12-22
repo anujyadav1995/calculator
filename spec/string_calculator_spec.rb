@@ -9,7 +9,10 @@ RSpec.describe StringCalculator do
             expect(StringCalculator.add("1")).to eq(1)
         end
         it 'when there is a double or multiple number' do
-            expect(StringCalculator.add("1,2,3,4")).to eq(10)
+            expect(StringCalculator.add("1,5")).to eq(6)
+        end
+        it 'when there is a handle new lines between numbers' do
+            expect(StringCalculator.add("1\n2,3")).to eq(6)
         end
     end
 end
