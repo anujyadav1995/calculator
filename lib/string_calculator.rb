@@ -8,10 +8,9 @@ class StringCalculator
             numbers = parts[1]
         end
     
-        count = 0
-        numbers.split(/#{delimiter}/).map do |element|
-            count +=element.to_i
-        end
-        count
+        num_array = numbers.split(/#{delimiter}/).map(&:to_i)
+        negatives = num_array.select { |num| num < 0 }
+        raise "negative numbers not allowed: #{negatives.join(', ')}" if negatives.any?
+        num_array.sum
     end
 end
